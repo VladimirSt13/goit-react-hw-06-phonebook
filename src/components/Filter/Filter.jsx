@@ -8,7 +8,6 @@ import { setFiltersQuery } from 'redux/fitersSlice';
 export const Filter = () => {
   const query = useSelector(getFiltersQuery);
   const dispatch = useDispatch();
-  console.log(query);
 
   const handleChangeFilter = e => {
     dispatch(setFiltersQuery(e.target.value.toLowerCase().trim()));
