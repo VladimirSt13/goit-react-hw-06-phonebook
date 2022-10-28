@@ -1,11 +1,11 @@
 import { List } from './ContactList.styled';
 import { Contact } from 'components/Contact/Contact';
 import { useSelector } from 'react-redux';
-import { getContacts, getFiltersQuery } from 'redux/selectors';
+import { getContacts, getFilterQuery } from './../../redux/selectors';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
-  const query = useSelector(getFiltersQuery);
+  const query = useSelector(getFilterQuery);
 
   const outputContacts = contacts.filter(({ name }) =>
     name.toLowerCase().includes(query)

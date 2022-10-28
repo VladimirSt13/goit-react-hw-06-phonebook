@@ -2,16 +2,15 @@ import { Box } from 'components/Commons/Box';
 import { FilterTitle } from './Filter.styled';
 import { Input } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFiltersQuery } from 'redux/selectors';
-import { setFiltersQuery } from 'redux/fitersSlice';
+import { getFilterQuery } from 'redux/selectors';
+import { setFilterQuery } from './../../redux/actions';
 
 export const Filter = () => {
-  const query = useSelector(getFiltersQuery);
+  const query = useSelector(getFilterQuery);
   const dispatch = useDispatch();
-  console.log(query);
 
   const handleChangeFilter = e => {
-    dispatch(setFiltersQuery(e.target.value.toLowerCase().trim()));
+    dispatch(setFilterQuery(e.target.value.toLowerCase().trim()));
   };
 
   return (
